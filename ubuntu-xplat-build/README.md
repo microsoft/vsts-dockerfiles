@@ -17,6 +17,11 @@ This Docker Image is dependent on ubuntu-minjava-build so you must first downloa
 See https://github.com/Microsoft/vsts-dockerfiles/blob/master/ubuntu-minjava-build/README.md
 
 
+This Dockerfile was built and tested on an Ubuntu 16.04 host running Docker v1.11.2.  Earlier versions may or may not work.
+If you don't already have a host running Docker, you can use the Azure QuickStart template to set up one for Ubuntu:
+https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu
+
+
 Example of how to build on an Ubuntu Docker host:
 
  cd vsts-dockerfiles/ubuntu-xplat-build

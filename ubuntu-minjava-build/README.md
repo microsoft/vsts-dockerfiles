@@ -2,6 +2,10 @@
 Dockerfile and shell script to build an Ubuntu docker container to run the Team Services coreCLR build agent for building
 Java (OpenJDK 7 and 8) with Ant, Maven or Gradle (via gradlew).
 
+This Dockerfile was built and tested on an Ubuntu 16.04 host running Docker v1.11.2.  Earlier versions may or may not work.
+If you don't already have a host running Docker, you can use the Azure QuickStart template to set up one for Ubuntu:
+https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu
+
 
 Example of how to build on an Ubuntu Docker host:
 
