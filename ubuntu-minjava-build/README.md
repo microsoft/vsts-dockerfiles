@@ -13,7 +13,7 @@ Example of how to build on an Ubuntu Docker host:
 
 Example of how to run a container once the image above is built:
 
- "docker run -d --privileged --name <Docker container name> javaalm/vsts-ubuild-minjava ./vsts-startup.sh <Team Services Account url> <PAT> <Pool Name> <Agent Name>"
+ docker run -d --privileged --name \<Docker container name\> javaalm/vsts-ubuild-minjava ./vsts-startup.sh \<Team Services Account url\> \<PAT\> \<Pool Name\> \<Agent Name\>
 
 
 
