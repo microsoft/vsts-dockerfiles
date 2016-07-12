@@ -29,6 +29,15 @@ Example of how to build on an Ubuntu Docker host:
  sudo docker build --tag javaalm/vsts-ubuild-full .
 
 
+To create a build agent and connect to Visual Studio Team Services, you will need to:
+1. Know the Team Services URL (e.g. https://myaccount.visualstudio.com)
+2. Create or obtain a Personal Access Token (PAT) from Team Services which has "build" priviledges/capabilities
+(see https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
+3. Create or obtain a build agent pool in Team Services
+(see https://www.visualstudio.com/en-us/docs/release/getting-started/configure-agents)
+4. Decide on a name for your build agent (i.e. the name for your agent within the above pool).
+
+
 
 Example of how to run a container once the image above is built:
 
