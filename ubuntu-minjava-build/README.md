@@ -3,6 +3,11 @@
 Dockerfile and shell script to build an Ubuntu docker container to run the Team Services coreCLR build agent for building
 Java (OpenJDK 7 and 8) with Ant, Maven or Gradle (via gradlew).
 
+
+To learn more about how Visual Studio Team Services supports building and continous integration with Java see:
+http://java.visualstudio.com/Docs/gettingstarted/buildwebapp
+
+
 This Dockerfile was built and tested on an Ubuntu 16.04 host running Docker v1.11.2.  Earlier versions may or may not work.
 If you don't already have a host running Docker, you can use the Azure QuickStart template to set up one for Ubuntu:
 https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu
@@ -18,12 +23,12 @@ Example of how to build on an Ubuntu Docker host:
 
 
 To create a build agent and connect to Visual Studio Team Services, you will need to:
-1. Know the Team Services URL (e.g. https://myaccount.visualstudio.com)
-2. Create or obtain a Personal Access Token (PAT) from Team Services which has "build" priviledges/capabilities 
+#. Know the Team Services URL (e.g. https://myaccount.visualstudio.com)
+#. Create or obtain a Personal Access Token (PAT) from Team Services which has "build" priviledges/capabilities 
 (see https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
-3. Create or obtain a build agent pool in Team Services
+#. Create or obtain a build agent pool in Team Services
 (see https://www.visualstudio.com/en-us/docs/release/getting-started/configure-agents)
-4. Decide on a name for your build agent (i.e. the name for your agent within the above pool).
+#. Decide on a name for your build agent (i.e. the name for your agent within the above pool).
 
 
 
