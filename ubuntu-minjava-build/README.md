@@ -88,5 +88,5 @@ Once your OS prompt returns, you can look at the contents of a log to see the er
 If you are having Team Services permission issues, make sure the User that created the PAT has the proper permissions following the documentation provided in step 2 above under "Create and Run the Docker Container".
 
 When you are done debugging, exit the container by typing:
- *exit*
+ **exit**
 
