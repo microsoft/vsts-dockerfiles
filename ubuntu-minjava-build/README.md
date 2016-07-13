@@ -64,11 +64,11 @@ The expected output from the run comand is the ID of the container created.  It 
 To verify the container is running (and continues to run), run:
  **docker ps -a**
 
-If the STATUS filed indicates the container "exited" then something went wrong.  First, check to make sure the spelling of everything on the "docker run" command is correct.  Second, the most likely failure is a lack of the correct Team Services permissions for the PAT.
+If the STATUS field indicates the container "exited" then something went wrong.  First, check to make sure the spelling of everything on the "docker run" command is correct.  Second, the most likely failure is a lack of the correct Team Services permissions for the PAT.
 
 
 ---
-### Debugging Failures
+### Debug Failures
 
 
 As mentioned above, the mostly likely cause of the container prematurely exiting and thus failing is 1) a mistyping on the "docker run" command line and 2) lack of proper permissions for the PAT to enable the creation of a build pool agent.
@@ -83,7 +83,10 @@ This should place you inside of a newly running container.  From here you can ma
 
 Once your OS prompt returns, you can look at the contents of a log to see the error by typing:
 
- *cat ../vsts.install.log.txt*
+ **cat ../vsts.install.log.txt**
 
 If you are having Team Services permission issues, make sure the User that created the PAT has the proper permissions following the documentation provided in step 2 above under "Create and Run the Docker Container".
+
+When you are done debugging, exit the container by typing:
+ *exit*
 
