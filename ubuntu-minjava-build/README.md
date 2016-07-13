@@ -7,22 +7,33 @@ Java (OpenJDK 7 and 8) with Ant, Maven or Gradle (via gradlew).
 To learn more about how Visual Studio Team Services supports building and continous integration with Java see:
 http://java.visualstudio.com/Docs/gettingstarted/buildwebapp
 
+---
+### Setup and/or run an Docker Host or VM
 
 This Dockerfile was built and tested on an Ubuntu 16.04 host running Docker v1.11.2.  Earlier versions may or may not work.
+
 If you don't already have a host running Docker, you can use the Azure QuickStart template to set up one for Ubuntu:
 https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu
 
+You should select Ubuntu 16.04.0-LTS as the Ubuntu OS Version (the default is Ubuntu 14.04.4-LTS).
 
 
-Example of how to build on an Ubuntu Docker host:
+---
+### Build the Docker Image
 
- cd vsts-dockerfiles/ubuntu-minjava-build
+Example of how to build the Docker image on an Ubuntu Docker host:
 
- sudo docker build --tag javaalm/vsts-ubuild-minjava .
+ **git clone https://github.com/Microsoft/vsts-dockerfiles.git**
+
+ **cd vsts-dockerfiles/ubuntu-minjava-build**
+
+ **sudo docker build --tag javaalm/vsts-ubuild-minjava .**
 
 
+---
+### Create and Run the Docker Container
 
-To create a build agent and connect to Visual Studio Team Services, you will need to:
+To create a build agent container and connect to Visual Studio Team Services, you will need to:
 
 1. Know the Team Services URL (e.g. https://myaccount.visualstudio.com)
 
@@ -38,11 +49,41 @@ To create a build agent and connect to Visual Studio Team Services, you will nee
 
 Example of how to run a container once the image above is built:
 
- docker run -d --privileged --name \<Docker container name\> javaalm/vsts-ubuild-minjava ./vsts-startup.sh \<Team Services Account url\> \<PAT\> \<Pool Name\> \<Agent Name\>
+ **docker run -d --privileged --name \<Docker container name\> javaalm/vsts-ubuild-minjava ./vsts-startup.sh \<Team Services Account url\> \<PAT\> \<Pool Name\> \<Agent Name\>**
 
 
 
 so something like this (but using your Team Services Account, PAT, and Pool and Agent names):
 
  docker run -d --privileged --name docker-xplat-minjava javaalm/vsts-ubuild-minjava ./vsts-startup.sh https://myaccount.visualstudio.com/ spqnoh4j2sqklayog3ipsjovc3z5njvthpm2o4jdrdre2ztqxxxx default docker-xplat-minjava
+
+The expected output from the run comand is the ID of the container created.  It will look something like this:
+4f812a7b4f0e0c681eb3616cb04d0797eda37e32d1e5b35f79dfa686d95b3aee
+
+
+To verify the container is running (and continues to run), run:
+ **docker ps -a**
+
+If the STATUS filed indicates the container "exited" then something went wrong.  First, check to make sure the spelling of everything on the "docker run" command is correct.  Second, the most likely failure is a lack of the correct Team Services permissions for the PAT.
+
+
+---
+### Debugging Failures
+
+
+As mentioned above, the mostly likely cause of the container prematurely exiting and thus failing is 1) a mistyping on the "docker run" command line and 2) lack of proper permissions for the PAT to enable the creation of a build pool agent.
+
+To debug what is happening, you can run the Docker container interactively by using the command:
+
+ **docker run -it javaalm/vsts-ubuild-minjava**
+
+This should place you inside of a newly running container.  From here you can manually run the command to start the agent:
+
+ **./vsts-startup.sh \<Team Services Account url\> \<PAT\> \<Pool Name\> \<Agent Name\>**
+
+Once your OS prompt returns, you can look at the contents of a log to see the error by typing:
+
+ *cat ../vsts.install.log.txt*
+
+If you are having Team Services permission issues, make sure the User that created the PAT has the proper permissions following the documentation provided in step 2 above under "Create and Run the Docker Container".
 
