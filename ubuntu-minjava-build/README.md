@@ -37,7 +37,7 @@ To create a build agent container and connect to Visual Studio Team Services, yo
 
 1. Know the Team Services URL (e.g. https://myaccount.visualstudio.com)
 
-2. Create or obtain a Personal Access Token (PAT) from Team Services which has "build" priviledges/capabilities 
+2. Create or obtain a Personal Access Token (PAT) from Team Services which has *"Build (read and execute)"* and *"Agent Pools (read, manage)"* priviledges/capabilities
 (see https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
 
 3. Create or obtain a build agent pool in Team Services

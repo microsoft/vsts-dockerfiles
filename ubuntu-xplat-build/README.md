@@ -17,6 +17,8 @@ cross-platform (xplat) software.  Tools and languages available include:
 This Docker Image is dependent on ubuntu-minjava-build so you must first download and build that image first.
 See https://github.com/Microsoft/vsts-dockerfiles/blob/master/ubuntu-minjava-build/
 
+Follow the instructions in the README.md file through "Build the Docker Image" -- you do NOT have to actually create a Docker container from the ubuntu-minjava-build image.
+
 
 ---
 ### Setup and/or run an Docker Host or VM
@@ -48,7 +50,7 @@ To create a build agent container and connect to Visual Studio Team Services, yo
 
 1. Know the Team Services URL (e.g. https://myaccount.visualstudio.com)
 
-2. Create or obtain a Personal Access Token (PAT) from Team Services which has "build" priviledges/capabilities 
+2. Create or obtain a Personal Access Token (PAT) from Team Services which has *"Build (read and execute)"* and *"Agent Pools (read, manage)"* priviledges/capabilities 
 (see https://www.visualstudio.com/en-us/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate).
 
 3. Create or obtain a build agent pool in Team Services
