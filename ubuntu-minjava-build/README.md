@@ -3,7 +3,7 @@
 Dockerfile and shell script to build an Ubuntu docker container to run the Team Services coreCLR build agent for building
 Java (OpenJDK 7 and 8) with Ant, Maven or Gradle (via gradlew).
 
-The OFFICIAL VSTS Docker build agent is kept here (including support for Docker):
+The OFFICIAL VSTS Docker build agent is kept here (including support for Java):
 https://github.com/Microsoft/vsts-agent-docker
 
 To learn more about how Visual Studio Team Services supports building and continous integration with Java see:
