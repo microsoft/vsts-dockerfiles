@@ -1,5 +1,9 @@
 # ubuntu-xplat-build
 
+The OFFICIAL VSTS Docker build agent is kept here (including support for Java):
+https://github.com/Microsoft/vsts-agent-docker
+
+
 Dockerfile to compose upon the ubuntu-minjava-build image to build an Ubuntu docker container to run the Team Services coreCLR build agent for building
 cross-platform (xplat) software.  Tools and languages available include:
 * Java (OpenJDK 7 and 8)
