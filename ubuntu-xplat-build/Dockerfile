@@ -2,7 +2,7 @@
 
 FROM javaalm/vsts-ubuild-minjava
 
-MAINTAINER Paul T. Barham <pabarham@microsoft.com>
+LABEL maintainer="Paul T. Barham <pabarham@microsoft.com>"
 
 LABEL version="RC2"
 LABEL description="An Ubuntu 16 VM with cross-platform developer tools and Team Services coreCLR build agent"

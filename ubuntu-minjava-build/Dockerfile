@@ -2,7 +2,7 @@
 
 FROM ubuntu:16.04
 
-MAINTAINER Paul T. Barham <pabarham@microsoft.com>
+LABEL maintainer="Paul T. Barham <pabarham@microsoft.com>"
 
 LABEL version="RC2"
 LABEL description="An Ubuntu 16 VM with Java developer tools and Team Services coreCLR build agent"
